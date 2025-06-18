@@ -17,6 +17,7 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+
         function Trip() {
             const [passCount, setPassCount] = React.useState(0);
             const [trip, setTrip] = React.useState({
@@ -33,17 +34,21 @@
                 });
             };
 
+
             return (
                 <div className="container">
-                    <label>
+                    <label >
                         Кількість пасажирів:
                         <input
                             style={{
                                 width: "50px",
+                                marginRight: "10px",
+                                marginTop: "10px"
                             }}
                             type="number"
                             value={passCount}
-                            onChange={(e) => setPassCount(Number(e.target.value))}
+                            onChange={(e) => (setPassCount(Math.max(0, Number(e.target.value))))}
+                            min="0"
                         />
                     </label>
 
@@ -57,6 +62,7 @@
                 </div>
             );
         }
+
         function Random() {
             const [num1, setNum1] = React.useState(0);
             const [num2, setNum2] = React.useState(0);
