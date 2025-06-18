@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>React JSX UserCard</title>
+    <!-- Підключаємо React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- Підключаємо ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel для підтримки JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Trip() {
+            const [passCount, setPassCount] = React.useState(0);
+            const [trip, setTrip] = React.useState({
+                busCount: 0,
+                water: 0,
+                food: 0,
+            });
+
+            const onClickCalculation = () => {
+                setTrip({
+                    busCount: Math.ceil(passCount / 20),
+                    water: Math.ceil(passCount * 2),
+                    food: Math.ceil(passCount * 3),
+                });
+            };
+
+            return (
+                <div className="container">
+                    <label>
+                        Кількість пасажирів:
+                        <input
+                            style={{
+                                width: "50px",
+                            }}
+                            type="number"
+                            value={passCount}
+                            onChange={(e) => setPassCount(Number(e.target.value))}
+                        />
+                    </label>
+
+                    <button onClick={onClickCalculation}>Розрахувати</button>
+                    <br />
+                    <h3> Для {passCount} пасажирів</h3>
+                    <h3>Потрібно:</h3>
+                    <p> автобусів: {trip.busCount} </p>
+                    <p> води: {trip.water} пляшок </p>
+                    <p> бутербродів: {trip.food} од.</p>
+                </div>
+            );
+        }
+        function Random() {
+            const [num1, setNum1] = React.useState(0);
+            const [num2, setNum2] = React.useState(0);
+            const [random, setRandom] = React.useState(0);
+
+            const onClickCalculation = () => {
+                setRandom(Math.floor(Math.random() * (num2 - num1)) + num1);
+            };
+
+            return (
+                <div className="container">
+                    <div className="random">
+                        <label>Перше число:</label>
+                        <input
+                            type="number"
+                            value={num1}
+                            onChange={(e) => setNum1(Number(e.target.value))}
+                        />
+                        <span>Друге число:</span>
+                        <input
+                            type="number"
+                            value={num2}
+                            onChange={(e) => setNum2(Number(e.target.value))}
+                        />
+
+                        <button onClick={onClickCalculation}>Розрахувати</button>
+                        <span>Випадкове число:</span>
+                        <input
+                            style={{
+                                width: "100px",
+                            }}
+                            type="text"
+                            value={random}
+                            readOnly
+                        />
+                    </div>
+                </div>
+            );
+        }
+
+        function ShowSeason({ data }) {
+            return (
+                <div>
+                    <h3>
+                        {" "}
+                        Коли на вулиці: <span style={{ color: "red" }}>{data.name} </span>
+                        , зазвичай одягають
+                    </h3>
+                    <h3>{data.title}</h3>
+                    <img className="img" src={data.img} alt={data.name} />
+                </div>
+            );
+        }
+
+        function SeasonalAdvisor() {
+            const [monthNumber, setMonthNumber] = React.useState(1);
+
+            const [season, setSeason] = React.useState([
+                {
+                    season: 0,
+                    img: "/img/0.jpg",
+                    title: " всяке ",
+                    name: "НЕВІДОМО що",
+                },
+                {
+                    season: 1,
+                    img: "./img/01.jpg",
+                    title: "тепле пальто, зимові чоботи, шапку і рукавиці.",
+                    name: "зима",
+                },
+                {
+                    season: 2,
+                    img: "./img/02.jpg",
+                    title: "плащ, черевики, легкі светри. ",
+                    name: "весна",
+                },
+                {
+                    season: 3,
+                    img: "./img/03.jpg",
+                    title: "легкі футболки, шорти, сандалії.",
+                    name: "літо",
+                },
+                {
+                    season: 4,
+                    img: "./img/04.jpg",
+                    title: "пальто, светри, штани і  чоботи.",
+                    name: "оcінь",
+                },
+            ]);
+
+            const getSeason = (number) => {
+                const seasons = [1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 1];
+                return seasons[number - 1] || 0;
+            };
+
+            return (
+                <div className="cart">
+                    <h2>Задайте місяць:</h2>
+                    <input
+                        type="number"
+                        value={monthNumber}
+                        onChange={(e) => setMonthNumber(Number(e.target.value))}
+                        min="1"
+                        style={{
+                            width: "150px",
+                            height: "20px",
+                        }}
+                    />
+
+                    <div>
+                        <ShowSeason data={season[getSeason(monthNumber)]} />
+                    </div>
+                </div>
+            );
+        }
+
+        function Transaction(text1, sum, text2, onClick) {
+            const [number, setNumber] = React.useState(sum);
+        }
+
+        function Banking() {
+            const [balance, setBalance] = React.useState(0);
+            const [negativeBalance, setNegativeBalance] = React.useState(false);
+            const [add, setAdd] = React.useState(0);
+            const [balanceColor, setBalanceColor] = React.useState("black");
+            const [minus, setMinus] = React.useState(0);
+            const [dolar, setDolar] = React.useState(0);
+            const [euro, setEuro] = React.useState(0);
+            const [fee, setFee] = React.useState(0);
+
+            const data = [
+                { id: 0, name: "dolar", value: Number(0.024) },
+                { id: 1, name: "euro", value: Number(0.0208) },
+            ];
+
+            const onClickAdd = () => {
+                const fee = add * 0.03;
+                const newBalance = +(balance + add - fee).toFixed(2);
+                setFee(fee);
+                setBalance(newBalance);
+                setNegativeBalance(false);
+                setEuro(+(data[1].value * newBalance).toFixed(2));
+                setDolar(+(data[0].value * newBalance).toFixed(2));
+                setAdd(0);
+                setBalanceColor("green");
+
+            };
+
+            const onClickMinus = () => {
+                const fee = minus * 0.03;
+                const newBalance = +(balance - minus - fee).toFixed(2);
+
+                if (newBalance >= 0) {
+                    setBalance(newBalance);
+                    setFee(fee);
+                    setNegativeBalance(false);
+                    setEuro(+(data[1].value * newBalance).toFixed(2));
+                    setDolar(+(data[0].value * newBalance).toFixed(2));
+                    setMinus(0);
+                    setBalanceColor("red");
+                } else {
+                    setNegativeBalance(true);
+                    setBalanceColor("black");
+                    setFee(0);
+                }
+            };
+
+            return (
+                <div className="container" style={{ width: "450px" }}>
+                    <div>
+                        <h4 className="balance">
+                            Сума на рахунку:
+                            <span style={{ color: balanceColor }}> {balance}</span>
+                        </h4>
+
+                        <div className="balance ">
+                            <span> Зарахувати на рахунок:</span>
+                            <input
+                                type="number"
+                                value={add}
+                                onChange={(e) => setAdd(Number(e.target.value))}
+                            />
+                            <button onClick={onClickAdd}>Зарахувати </button>
+                        </div>
+                        <div className="balance">
+                            <span> Зняти з рахунку:</span>
+                            <input
+                                type="number"
+                                value={minus}
+                                onChange={(e) => setMinus(Number(e.target.value))}
+                            />
+                            <button onClick={onClickMinus}>Зняти</button>
+                            <span
+                                style={
+                                    negativeBalance
+                                        ? { color: "red" }
+                                        : { visibility: "hidden" }
+                                }
+                            >
+                                Коштів на рахунку недостатньо
+                            </span>
+                        </div>
+                        <div className="line" />
+                        <div>
+                            <h4>Обслуговування (3%): {fee}</h4>
+                            <h4>Cума у доларах: ${dolar}</h4>
+                            <h4>Cума у євро: Є{euro}</h4>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Головний компонент App
+        function App() {
+            return (
+                <div className="wrapper">
+                    <div>
+                        <h2>Завдання 1 </h2>
+                        <Trip />
+                    </div>
+                    <div>
+                        <h2>Завдання 2 </h2>
+                        <SeasonalAdvisor />
+                    </div>
+                    <div>
+                        <h2>Завдання 3 </h2>
+                        <Random />
+                    </div>
+                    <div>
+                        <h2>Завдання 4 </h2>
+                        <Banking />
+                    </div>
+                </div>
+            );
+        }
+
+        // Рендеримо компонент App у DOM
+        ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
