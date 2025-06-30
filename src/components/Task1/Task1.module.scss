@@ -1,0 +1,38 @@
+.containerTask1 {
+  align-items: flex-start;
+  gap: 5px;
+}
+.input {
+  width: 150px;
+  padding: 5px;
+  border: 2px solid var(--green-300);
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+.button {
+  border: 1px solid var(--green-300);
+  height: 30px;
+  width: 40px;
+  background-color: var(--green-400);
+  border-radius: 8px;
+
+  &:hover {
+    transform: scale(0.97);
+  }
+}
+.img {
+  width: 20%;
+}
+.checkLogin {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+  transition: all 0.3s;
+}
+.hint {
+  border: 1px solid var(--green-300);
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: start;
+}
