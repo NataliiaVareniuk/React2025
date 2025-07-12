@@ -1,0 +1,29 @@
+.containerTask7 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.input {
+  width: 150px;
+  padding: 5px;
+  border: 2px solid var(--green-300);
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.listItem {
+  padding: 4px 0;
+  text-align: start;
+}
+
+.h1 {
+  font-weight: 600;
+  text-align: start;
+}
+
+.items {
+  padding: 5px;
+  border: 2px solid var(--green-300);
+}

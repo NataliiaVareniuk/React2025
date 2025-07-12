@@ -1,0 +1,44 @@
+.containerTask1 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.input {
+  width: 150px;
+  padding: 5px;
+  border: 2px solid var(--green-300);
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.checkLogin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.listItem {
+  padding: 4px 0;
+  text-align: start;
+}
+
+.h1 {
+  font-weight: 600;
+  text-align: start;
+}
+
+.items {
+  padding: 5px;
+  border: 2px solid var(--green-300);
+}
