@@ -1,0 +1,86 @@
+.containerTask1 {
+  height: 100%;
+  gap: 15px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.input {
+  padding: 7px;
+  min-width: 200px;
+  border: 2px solid var(--green-300);
+  border-radius: 8px;
+  min-height: 30px;
+  resize: none;
+}
+
+.button {
+  border: 2px solid var(--green-300);
+  padding: 5px 10px;
+  border-radius: 8px;
+  &:hover {
+    background-color: var(--green-300);
+  }
+}
+.countButton {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background: url("../../assets/images/iconsLike.png") center / contain
+    no-repeat;
+  cursor: pointer;
+}
+.countButtonDisLike {
+  @extend .countButton;
+  transform: rotate(180deg);
+}
+.messageLi {
+  display: flex;
+  gap: 3px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px 10px;
+  max-width: 60%;
+  background-color: var(--green-200);
+  border-radius: 8px;
+  flex-direction: column;
+  margin-bottom: 2px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.5;
+  &:nth-child(odd) {
+    align-self: flex-start;
+  }
+
+  &:nth-child(even) {
+    align-self: flex-end;
+  }
+}
+
+.messageAll {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.send {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.message_fild {
+  width: 500px;
+  height: 400px;
+  overflow-y: scroll;
+  background-color: var(--green-400);
+  padding: 10px;
+}
+.buttonsLike {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  justify-content: flex-start;
+}

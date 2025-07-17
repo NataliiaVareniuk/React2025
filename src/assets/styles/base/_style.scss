@@ -1,0 +1,14 @@
+.containerTask {
+  min-height: 300px;
+  background: var(--green-50);
+  display: flex;
+  margin-inline: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-start;
+  padding: 15px;
+  align-items: center;
+
+  border-radius: 8px;
+}
