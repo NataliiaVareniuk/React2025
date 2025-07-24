@@ -1,0 +1,46 @@
+@use "sass:math";
+@use "./mixins";
+@use "./variables";
+
+@use "./reset";
+@use "./style";
+
+/* google fonts */
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,500,600&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--grey-100);
+  color: black;
+
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  color: var(--black);
+}
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  & > .page {
+    flex-grow: 1;
+  }
+  &__container {
+    padding-block: toRem(50);
+  }
+}
+.wrapper > main {
+  flex-grow: 1;
+}
+[class*="__container"] {
+  max-width: var(--containerWidth);
+  padding-inline: var(--containerPadding);
+  margin-inline: auto;
+}
+
+.page {
+  width: 100%;
+}
