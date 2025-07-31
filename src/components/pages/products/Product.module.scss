@@ -1,0 +1,65 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid var(--grey-400);
+  border-radius: 8px;
+  gap: 15px;
+  width: 200px;
+  height: 250px;
+  &:hover {
+    cursor: pointer;
+    border: 2px solid var(--grey-500);
+    box-shadow: 4px 1px 11px 5px rgba(34, 60, 80, 0.2);
+  }
+}
+
+span {
+  font-size: 12px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.images {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.button {
+  width: 150px;
+  padding: 10px;
+
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid var(--green-800);
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: var(--green-300);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
