@@ -1,12 +1,88 @@
 # React + Vite
+# 🛍️ React Shop App (HW07)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a learning-oriented React application simulating an online store. It features product categories, product listings by category, and detailed product pages.
 
-Currently, two official plugins are available:
+## 🔧 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18
+- React Router DOM
+- SCSS (module-based styling)
+- Vite
+- Custom React hook (`useFetch`)
+- API: [https://dummyjson.com](https://dummyjson.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/NataliiaVareniuk/React2025.git
+cd React2025
+git checkout HW07
+2. Install Dependencies
+bash
+npm install
+or
+
+bash
+yarn install
+3. Start the Development Server
+bash
+npm run dev
+or
+
+bash
+yarn dev
+Then open http://localhost:5173 in your browser.
+
+🧭 Routes
+/ — Home page
+
+/products — Category selection
+
+/products/category/:category — Product list by category
+
+/products/detail/:id — Product detail page
+
+/about, /pay, /contacts — Static info pages
+
+📁 Project Structure
+cpp
+src/
+├── components/
+│   └── pages/
+│       └── products/
+│           ├── ProductList.jsx
+│           ├── ProductCard.jsx
+│           ├── ProductDetails.jsx
+│           ├── ProductCategories.jsx
+│           └── Product.module.scss
+├── api/
+│   └── apiRoutes.js
+├── utils/
+│   └── hooks/
+│       └── useFetch.js
+├── routes/
+│   └── frontRoutes.js
+├── Layout/
+│   └── Layout.jsx
+└── AppRoutes.jsx
+📌 Homework HW07 Goals
+✅ Select category
+✅ Display products by category
+✅ Product detail page
+✅ Navigate back to product list
+✅ Use custom useFetch hook
+✅ SCSS module-based styling
+✅ Dynamic routing with React Router
+
+🧑‍💻 Author
+Nataliia Vareniuk
+
+GitHub Profile
+
+📄 License
+This project is for educational purposes only.
