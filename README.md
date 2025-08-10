@@ -1,12 +1,37 @@
-# React + Vite
+# React 2025 – HW08
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Description
+This project was created as part of the **React 2025** course.  
+It contains a teacher management page, including a list view, add/edit form, and meeting list.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 📄 Display a list of teachers
+- ➕ Add a new teacher
+- ✏️ Edit teacher information
+- ❌ Delete a teacher
+- 💾 Save state to `localStorage`
+- 🔄 Work with API via `axios`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used
+- **React 18**
+- **React Router v6**
+- **Axios**
+- **SCSS modules**
+- **Vite**
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
+src/
+├── hooks/ # Custom hooks (API calls)
+├── pages/ # Project pages
+├── components/ # UI components
+├── routes/ # App routes
+└── styles/ # SCSS styles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Getting Started
+```bash
+npm install
+npm run dev
+Open in your browser:
+http://localhost:5173
+
+✍️ Author: Nataliia Vareniuk
