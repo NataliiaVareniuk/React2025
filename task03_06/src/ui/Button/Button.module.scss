@@ -1,0 +1,92 @@
+.button {
+  min-width: var(--btnWidth);
+  width: max-content;
+
+  display: inline-flex;
+
+  height: 36px;
+  padding: 12px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.33333;
+  border-radius: var(--border-radius);
+
+  font-family: "Roboto", sans-serif;
+
+  font-size: 15px;
+  border: 1px solid transparent;
+
+  box-shadow: var(--shadow);
+  letter-spacing: -0.3px;
+  transition: all var(--transition-speed);
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background: var(--primary-green);
+  color: var(--white-text);
+
+  &:not(:disabled):hover {
+    border-color: var(--border-green);
+    box-shadow: var(--hover-shadow);
+  }
+
+  &:not(:disabled):active {
+    background-color: var(--pressed-green);
+    border-color: var(--border-green);
+    box-shadow: var(--hover-shadow);
+  }
+  &:disabled {
+    color: var(--disabled-primary);
+    background: var(--disabled-green);
+    pointer-events: none;
+
+    .icon {
+      filter: brightness(0) saturate(100%) invert(76%) sepia(8%) saturate(20%)
+        hue-rotate(357deg) brightness(97%) contrast(89%);
+    }
+  }
+}
+
+.secondary {
+  border-color: var(--secondary-grey);
+  background-color: var(--white-text);
+  color: var(--text-default);
+
+  &:not(:disabled):hover {
+    background: var(--hover-grey);
+    box-shadow: var(--secondary-shadow);
+  }
+  &:not(:disabled):active {
+    background-color: var(--pressed-grey);
+    box-shadow: var(--secondary-shadow);
+  }
+  &:disabled {
+    pointer-events: none;
+    color: var(--underline-default);
+    border-color: var(--border-grey);
+    background: var(--disabled-grey);
+    box-shadow: var(--shadow);
+    .icon {
+      filter: brightness(0) saturate(100%) invert(47%) sepia(5%) saturate(20%)
+        hue-rotate(315deg) brightness(94%) contrast(87%);
+    }
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.w100 {
+  --btnWidth: 100px;
+  width: var(--btnWidth);
+}
+.w150 {
+  --btnWidth: 150px;
+  width: var(--btnWidth);
+}

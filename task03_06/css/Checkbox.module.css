@@ -1,0 +1,67 @@
+.checkboxInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.checkBox {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--text-default);
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.checkBox img {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all var(--transition-speed) ease;
+  transition: all var(--transition-speed) ease;
+}
+
+.checkboxLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 10px;
+}
+
+.checkboxInput:checked + .checkBox {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.labelText {
+  color: var(--black-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.2px;
+}

@@ -1,0 +1,104 @@
+.timeSelect {
+  color: var(--text-default);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  margin-bottom: 7px;
+}
+
+.buttonTimeSelect {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.33333;
+  letter-spacing: -0.3px;
+  margin-bottom: 13px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 88px;
+  min-height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 1px solid var(--text-default);
+  align-items: flex-start;
+}
+
+.timeContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-grey-secondary);
+  background-color: var(--main-background);
+  -webkit-box-shadow: var(--time-shadow);
+          box-shadow: var(--time-shadow);
+  overflow: hidden;
+  max-height: 180px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+.timeContent::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.timeItem {
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.33333;
+  letter-spacing: -0.3px;
+  padding: 13px 8px 12px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 36px;
+  -webkit-transition: all var(--transition-speed) ease;
+  transition: all var(--transition-speed) ease;
+}
+.timeItem:hover {
+  background-color: var(--hovered-time);
+}
+
+.selected {
+  background-color: var(--selection-time);
+}

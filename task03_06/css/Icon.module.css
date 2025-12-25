@@ -1,0 +1,32 @@
+.icon {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 0;
+}
+
+.size_m {
+  width: 12px;
+  height: 12px;
+}
+
+.size_s {
+  width: 10px;
+  height: 6px;
+}
+
+.size_l {
+  width: 16px;
+  height: 16px;
+}
+
+.color_primaryIcon {
+  color: var(--color-modal);
+}

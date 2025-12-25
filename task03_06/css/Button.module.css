@@ -1,0 +1,101 @@
+.button {
+  min-width: var(--btnWidth);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 36px;
+  padding: 12px 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  line-height: 1.33333;
+  border-radius: var(--border-radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  border: 1px solid transparent;
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  letter-spacing: -0.3px;
+  -webkit-transition: all var(--transition-speed);
+  transition: all var(--transition-speed);
+}
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.primary {
+  background: var(--primary-green);
+  color: var(--white-text);
+}
+.primary:not(:disabled):hover {
+  border-color: var(--border-green);
+  -webkit-box-shadow: var(--hover-shadow);
+          box-shadow: var(--hover-shadow);
+}
+.primary:not(:disabled):active {
+  background-color: var(--pressed-green);
+  border-color: var(--border-green);
+  -webkit-box-shadow: var(--hover-shadow);
+          box-shadow: var(--hover-shadow);
+}
+.primary:disabled {
+  color: var(--disabled-primary);
+  background: var(--disabled-green);
+  pointer-events: none;
+}
+.primary:disabled .icon {
+  -webkit-filter: brightness(0) saturate(100%) invert(76%) sepia(8%) saturate(20%) hue-rotate(357deg) brightness(97%) contrast(89%);
+          filter: brightness(0) saturate(100%) invert(76%) sepia(8%) saturate(20%) hue-rotate(357deg) brightness(97%) contrast(89%);
+}
+
+.secondary {
+  border-color: var(--secondary-grey);
+  background-color: var(--white-text);
+  color: var(--text-default);
+}
+.secondary:not(:disabled):hover {
+  background: var(--hover-grey);
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
+}
+.secondary:not(:disabled):active {
+  background-color: var(--pressed-grey);
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
+}
+.secondary:disabled {
+  pointer-events: none;
+  color: var(--underline-default);
+  border-color: var(--border-grey);
+  background: var(--disabled-grey);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+}
+.secondary:disabled .icon {
+  -webkit-filter: brightness(0) saturate(100%) invert(47%) sepia(5%) saturate(20%) hue-rotate(315deg) brightness(94%) contrast(87%);
+          filter: brightness(0) saturate(100%) invert(47%) sepia(5%) saturate(20%) hue-rotate(315deg) brightness(94%) contrast(87%);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.w100 {
+  --btnWidth: 100px;
+  width: var(--btnWidth);
+}
+
+.w150 {
+  --btnWidth: 150px;
+  width: var(--btnWidth);
+}

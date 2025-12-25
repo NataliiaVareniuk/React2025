@@ -1,0 +1,115 @@
+.inputContainer {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+.inputContent {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: flex-start;
+  margin-bottom: 2px;
+}
+.label {
+  color: var(--text-default);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  text-align: left;
+}
+
+@mixin baseInput {
+  border-bottom: 1px solid var(--underline-default);
+  padding-bottom: 8px;
+  flex-shrink: 0;
+  outline: none;
+  color: var(--text-default);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.333333;
+  letter-spacing: -0.3px;
+  &:not(:disabled):hover {
+    cursor: pointer;
+  }
+
+  &::placeholder {
+    opacity: 0.8;
+    color: var(--text-default);
+  }
+
+  &:not(:disabled):active::placeholder {
+    opacity: 1;
+  }
+  &:not(:disabled):focus,
+  &:not(:disabled):active {
+    border-color: var(--text-default);
+  }
+  &:focus::placeholder {
+    opacity: 1;
+  }
+  &:disabled {
+    color: var(--underline-default);
+  }
+}
+.input {
+  @include baseInput;
+  width: var(--input-width);
+}
+
+.inputError {
+  @include baseInput;
+  width: var(--input-width);
+  border-color: var(--red-error);
+  &::placeholder {
+    color: var(--text-default);
+    opacity: 1;
+  }
+}
+.inputError:not(:disabled):focus,
+.inputError:not(:disabled):active {
+  border-color: var(--red-error);
+}
+
+.error {
+  color: var(--red-error);
+  font-size: 10px;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  min-height: 12px;
+  transition: opacity var(--transition-speed) ease;
+  opacity: 0;
+}
+
+.errorVisible {
+  @extend .error;
+  opacity: 1;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.buttonClass {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 7px;
+  &:disabled {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(15%) saturate(18%)
+      hue-rotate(350deg) brightness(91%) contrast(98%);
+    cursor: not-allowed;
+  }
+}
+
+.disabled {
+  color: var(--underline-default);
+}
+.w300 {
+  --input-width: 300px;
+}

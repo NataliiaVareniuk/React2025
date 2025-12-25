@@ -1,0 +1,8 @@
+.link {
+  color: var(--primary-green);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3333;
+  letter-spacing: -0.3px;
+}

@@ -1,0 +1,50 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 7px;
+  max-width: 456px;
+}
+
+.header {
+  color: var(--text-default);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+.text {
+  font-size: 15px;
+  line-height: 1.3333;
+  letter-spacing: -0.3px;
+  overflow: auto;
+  border: none;
+  outline: none;
+  resize: none;
+  cursor: text;
+  pointer-events: initial;
+  &:not(:disabled):focus,
+  &:not(:disabled):active {
+    color: var(--black-color);
+  }
+  &:hover {
+    color: var(--black-color);
+    cursor: pointer;
+  }
+}
+.text::-webkit-scrollbar {
+  display: none;
+}
+
+.separator {
+  border-radius: 1px;
+  background: var(--underline-default);
+  height: 1px;
+  margin-top: 6px;
+}
+.disabled {
+  cursor: none;
+  pointer-events: none;
+  background-color: transparent;
+  color: var(--disabled-primary);
+}

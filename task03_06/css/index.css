@@ -1,0 +1,152 @@
+:root {
+  --main-background: #ffffff;
+  --header-background: #171717;
+  --primary-green: #00ae1c;
+  --disabled-green: #187727;
+  --border-green: #5ce171;
+  --pressed-green: #0cd52b;
+  --secondary-grey: #dedfe5;
+  --border-grey-secondary: #dee0e5;
+  --disabled-grey: #c8c8c8;
+  --border-grey: #8d8e91;
+  --hover-grey: #efefef;
+  --pressed-grey: #e0e0e0;
+  --underline-default: #737373;
+  --text-default: #323749;
+  --color-modal: #323749;
+  --disabled-link: #575d58;
+  --disabled-primary: #b9b9b9;
+  --disabled-secondary: #a1a1a1;
+  --initial-background: #ffffff;
+  --selection-time: #e3e3e3;
+  --hovered-time: #f6f6f6;
+  --contact-information-text: #243573;
+  --white-text: #ffffff;
+  --red-error: #ff5620;
+  --dark-text: #0c0c0c;
+  --card-count: #e9ed08;
+  --black-color: #000;
+  --shadow-hover: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  --shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --secondary-shadow: 0 1px 2px 0 rgba(69, 69, 69, 0.25);
+  --modal-shadow: 0 16px 50px 0 rgba(0, 0, 0, 0.24);
+  --hover-shadow: 0 2px 2px 0 rgba(92, 225, 113, 0.25);
+  --time-shadow: 0 8px 16px 0 rgba(49, 49, 49, 0.1);
+  --border-radius: 8px;
+  --border-radius-small: 4px;
+  --transition-speed: 0.3s;
+  --btnWidth: 63px;
+  --maxWidth: 1440px;
+  --containerCart: 1600px;
+  --containerWidth: 1350px;
+  --containerPadding: 15px;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+  --order-small: 465px;
+  --extraSmallDevices: 480px;
+  --smallDevices: 576;
+  --tablets: 768px;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+  marks: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--main-background);
+  color: var(--text-default);
+  font-size: 16px;
+  -ms-overflow-style: none;
+}
+
+[class*=__container] {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: var(--containerCart);
+  padding-inline: var(--containerPadding);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 32px 10px;
+}
