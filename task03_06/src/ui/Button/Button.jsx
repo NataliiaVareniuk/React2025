@@ -6,28 +6,28 @@ function Button({
   children,
   onClick,
   iconSrc,
-  width,
+  size = "m",
   variant = "primary",
   disabled = false,
 }) {
-  const widthClass = width ? style[`w${width}`] : "";
+ const allowedSizes = ["xs", "s", "m", "l", "xl"];
+ const safeSize = allowedSizes.includes(size) ? size : "s";
 
-  const safeVariant = ["primary", "secondary"].includes(variant)
-    ? variant
-    : "primary";
-
-  const buttonClass = classNames(style.button, widthClass, {
-    [style.primary]: safeVariant === "primary",
-    [style.secondary]: safeVariant === "secondary",
+  const buttonClass = classNames(
+    style.button, 
+    style[`size_${safeSize}`],{
+    [style.primary]: variant === "primary",
+    [style.secondary]: variant !== "primary",
   });
 
   return (
     <button
-      onClick={!disabled ? onClick : undefined}
+    type="button"
+      onClick={onClick }
       disabled={disabled}
       className={buttonClass}
     >
-      {iconSrc && <img src={iconSrc} alt={""} className={style.icon} />}
+      {iconSrc && <img src={iconSrc} className={style.icon} />}
       <span>{children}</span>
     </button>
   );

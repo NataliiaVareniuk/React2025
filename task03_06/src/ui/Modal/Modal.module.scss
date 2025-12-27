@@ -11,7 +11,7 @@
   transition: all 0.9s ease;
 }
 .modal {
-  width: var(--modal-width, 488px);
+  width: var(--modal-width, var(--modal-width-s));
   background: var(--main-background);
   max-height: 234px;
   display: flex;
@@ -68,4 +68,16 @@
   &:hover {
     background: var(--secondary-grey);
   }
+}
+.size_xs {
+  --modal-width: var(--modal-width-xs);
+}
+.size_s {
+  --modal-width: var(--modal-width-s);
+}
+.size_m {
+  --modal-width: var(--modal-width-m);
+}
+.size_l {
+  --modal-width: var(--modal-width-l);
 }

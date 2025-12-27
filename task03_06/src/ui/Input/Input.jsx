@@ -2,24 +2,32 @@ import style from "./Input.module.scss";
 import { useCallback, useState } from "react";
 import eye from "@/assets/images/icons/eye.svg";
 import eyeOff from "@/assets/images/icons/eye-off.svg";
+import classNames from "classnames";
 
-const Input = ({ label, error, width, disabled, name, type, ...rest }) => {
+const Input = ({ label, error, size = "l", disabled, name, type, ...rest }) => {
   const [visible, setVisible] = useState(false);
   const toggleVisible = useCallback(() => {
     setVisible((prev) => !prev);
   }, []);
+  
+  const allowedSizes = ["xs", "s", "m", "l", "xl"];
+ const safeSize = allowedSizes.includes(size) ? size : "s";
 
-  const inputType =
-    type === "password" ? (visible ? "text" : "password") : type;
-  const withInput = width ? style[`w${width}`] : "";
+  let inputType = type;
+  if (type === "password" && visible) {
+    inputType = "text";
+  }
+  const inputClass = classNames(
+    style.input,
+    error && style.inputError,
+    style[`size_${safeSize}`]
+  );
+  const labelClass = classNames(style.label, disabled && style.disabled);
 
   return (
     <div className={style.inputContainer}>
       <div className={style.inputContent}>
-        <label
-          className={style.label + (disabled ? ` ${style.disabled}` : "")}
-          htmlFor={name}
-        >
+        <label className={labelClass} htmlFor={name}>
           {label}
         </label>
         <div className={style.inputWrapper}>
@@ -28,10 +36,7 @@ const Input = ({ label, error, width, disabled, name, type, ...rest }) => {
             id={name}
             type={inputType}
             disabled={disabled}
-            className={`
-            ${error ? style.inputError : style.input}
-            ${withInput}
-          `}
+            className={inputClass}
             autoComplete="off"
             {...rest}
           />
@@ -43,7 +48,7 @@ const Input = ({ label, error, width, disabled, name, type, ...rest }) => {
               disabled={disabled}
               aria-label={visible ? "Hide password" : "Show password"}
             >
-              {visible ? <img src={eye} /> : <img src={eyeOff} />}
+              {<img src={visible ? eye : eyeOff} />}
             </button>
           )}
         </div>

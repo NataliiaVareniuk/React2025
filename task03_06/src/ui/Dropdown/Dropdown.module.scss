@@ -14,11 +14,9 @@
   align-items: center;
   padding: 12px 10px;
   flex-shrink: 0;
-
   border: 1px solid var(--secondary-grey);
   background: var(--initial-background);
   border-radius: var(--border-radius);
-
   box-shadow: var(--shadow);
   &:hover {
     background-color: var(--hover-grey);
@@ -37,9 +35,7 @@
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border-grey-secondary);
-
   background-color: var(--main-background);
-
   box-shadow: var(--time-shadow);
 }
 .dropdownItem {
@@ -48,7 +44,6 @@
   font-style: normal;
   line-height: 1.33333;
   letter-spacing: -0.3px;
-
   width: 100%;
   height: 36px;
   padding: 13px 8px 12px 8px;
@@ -60,11 +55,13 @@
     background-color: var(--hovered-time);
     cursor: pointer;
   }
+
   &:active,
   &:focus {
     background-color: var(--selection-time);
   }
 }
+
 .active,
 .selected {
   background-color: var(--selection-time);

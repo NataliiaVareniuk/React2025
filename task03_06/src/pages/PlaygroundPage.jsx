@@ -14,7 +14,6 @@ import Datepicker from "../ui/Datepicker/Datepicker";
 import Dropdown from "../ui/Dropdown/Dropdown";
 import TimeSelect from "../ui/TimeSelect/TimeSelect";
 
-
 function PlaygroundPage() {
   const [agree, setAgree] = useState(false);
   const [agreeWithText, setAgreeWithText] = useState(false);
@@ -23,18 +22,21 @@ function PlaygroundPage() {
   const [month, setMonth] = useState(new Date());
   const [selected, setSelected] = useState("Day");
   const [selectedTime, setSelectedTime] = useState("12:30 pm");
-  const initialColor = getComputedStyle(document.documentElement).getPropertyValue("--picked-color01").trim();
-  
+  const initialColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--picked-color01")
+    .trim();
 
-  const [text, setText]=useState("Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet");
+  const [text, setText] = useState(
+    "Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
+  );
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
-    const handleChangeTextArea = (e)=>{
-       setText(e.target.value)
-    }
-   
+  const handleChangeTextArea = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div className={style.mainContainer}>
       <div className={style.mainGroup}>
@@ -77,14 +79,13 @@ function PlaygroundPage() {
       </div>
       <div className={style.mainGroup}>
         <Link>Link</Link>
-        <Link disabled={true}>Link</Link>
+        <Link disabled>Link</Link>
       </div>
       <div className={style.mainGroup}>
         <Input
           label="Username*"
           type="text"
           error={""}
-          width="300"
           disabled={false}
           placeholder="Enter your username"
         />
@@ -92,15 +93,13 @@ function PlaygroundPage() {
           label="Username*"
           type="text"
           error={""}
-          width="300"
-          disabled={true}
+          disabled
           placeholder="Enter your username"
         />
         <Input
           label="Username*"
           type="text"
           error={"Error message"}
-          width="300"
           disabled={false}
           placeholder="Enter your username"
         />
@@ -110,7 +109,6 @@ function PlaygroundPage() {
           label="Password*"
           type="password"
           error={""}
-          width="300"
           disabled={false}
           placeholder="Enter your password"
         />
@@ -118,22 +116,24 @@ function PlaygroundPage() {
           label="Password*"
           type="password"
           error={""}
-          width="300"
-          disabled={true}
+          disabled
           placeholder="Enter your password"
         />
         <Input
           label="Password*"
           type="password"
           error={"Error message"}
-          width="300"
           disabled={false}
           placeholder="Enter your password"
         />
       </div>
       <div className={style.mainGroup}>
-        <Checkbox checked={agreeWithText} onChange={setAgreeWithText} children="Text" />
-        <Checkbox checked={agree} onChange={setAgree}  />
+        <Checkbox
+          checked={agreeWithText}
+          onChange={setAgreeWithText}
+          children="Text"
+        />
+        <Checkbox checked={agree} onChange={setAgree} />
       </div>
       <div className={style.mainGroup}>
         <div className={style.modalDemo}>
@@ -154,46 +154,43 @@ function PlaygroundPage() {
             pariatur.
           </Modal>
         </div>
-        <div className={style.ToastDemo}>
+        <div className={style.toastDemo}>
           <Button onClick={() => setShowToast(true)}>Show Toast</Button>
           {showToast && (
             <Toast
               message="Event deleted"
-              duration={9000}
+              duration={5000}
               onClose={() => setShowToast(false)}
               isOpen={true}
             />
           )}
-          
         </div>
       </div>
-       <div className={style.mainGroup}>
-        <Textarea 
-        label="Description" 
-        value ={text} 
-        onChange={handleChangeTextArea} 
-        disabled={false}
+      <div className={style.mainGroup}>
+        <Textarea
+          label="Description"
+          value={text}
+          onChange={handleChangeTextArea}
+          disabled={false}
         />
-       </div>
-        <div className={style.mainGroup}>
-        <Datepicker
-        selected={month} 
-       
-        
+      </div>
+      <div className={style.mainGroup}>
+        <Datepicker selected={month} />
+      </div>
+      <div className={style.mainGroup}>
+        <Dropdown selected={selected} setSelected={setSelected} />
+      </div>
+      <div className={style.mainGroup}>
+        <TimeSelect
+          selectedTime={selectedTime}
+          setSelectedTime={setSelectedTime}
         />
-       </div>
-       <div className={style.mainGroup}>
-        <Dropdown selected={selected} setSelected={setSelected}/>
-       </div>
-       <div className={style.mainGroup}>
-        <TimeSelect selectedTime={selectedTime} setSelectedTime={setSelectedTime}/>
-       </div>
-       <div className={style.mainGroup}>
-       
+      </div>
+      <div className={style.mainGroup}>
         <div className={style.colorPickerContainer}>
-         <ColorPalette />
+          <ColorPalette />
         </div>
-       </div>
+      </div>
     </div>
   );
 }

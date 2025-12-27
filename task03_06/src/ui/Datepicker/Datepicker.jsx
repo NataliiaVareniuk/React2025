@@ -31,7 +31,7 @@ function Datepicker({ selected }) {
   }); 
   
   return (
-    <div ref={dateRef} className={style.datepicker}>
+    <div ref={dateRef} className={style.datePicker}>
       <div className={style.header}>
         <div className={style.currentMonth}>
           <span>{currentMonth}</span>

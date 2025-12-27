@@ -50,7 +50,6 @@
   --border-radius-small: 4px;
 
   --transition-speed: 0.3s;
-  --btnWidth: 63px;
 
   --maxWidth: 1440px;
   --containerCart: 1600px;
@@ -65,4 +64,22 @@
   --extraSmallDevices: 480px;
   --smallDevices: 576;
   --tablets: 768px;
+
+  --btn-size-xs: 25px;
+  --btn-size-s: 43px;
+  --btn-size-m: 63px;
+  --btn-size-l: 83px;
+  --btn-size-xl: 103px;
+
+  --input-size-xs: 100px;
+  --input-size-s: 150px;
+  --input-size-m: 250px;
+  --input-size-l: 300px;
+  --input-size-xl: 350px;
+
+  --modal-width-xs: 320px;
+  --modal-width-s: 488px;
+  --modal-width-m: 560px;
+  --modal-width-l: 640px;
+  --modal-width-xl: 720px;
 }

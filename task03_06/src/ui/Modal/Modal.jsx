@@ -1,10 +1,11 @@
 import style from "./Modal.module.scss";
 import clsx from "clsx";
+
 import { Icon, ICON_PATHS } from "@/ui/Icon";
 import { createPortal } from "react-dom";
 
 function Modal({
-  width,
+  size = "s",
   title,
   onClose,
   className,
@@ -12,6 +13,9 @@ function Modal({
   isOpen = true,
   ...props
 }) {
+ const allowedSizes = ["xs", "s", "m", "l", "xl"];
+ const safeSize = allowedSizes.includes(size) ? size : "s";
+
   if (!isOpen) {
     return null;
   }
@@ -20,7 +24,10 @@ function Modal({
     if (isModal) return;
     onClose();
   };
-
+const modalClass = clsx(
+  style.modal,
+  style[`size_${safeSize}`]
+);
   const modal = (
     <div
       className={clsx(style.modalBackdrop, className)}
@@ -28,8 +35,7 @@ function Modal({
     >
       <div
         data-id="modal"
-        className={style.modal}
-        style={{ "--modal-width": width ? `${width}px` : undefined }}
+        className={modalClass}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"

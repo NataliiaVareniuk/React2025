@@ -11,7 +11,7 @@ function Textarea({
 }) {
   return (
     <div
-      className={clsx(style.textarea, {
+      className={clsx(style.textArea, {
         [style.disabled]: disabled,
         className
       })}
@@ -31,7 +31,7 @@ function Textarea({
         placeholder={placeholder}
         disabled={disabled}
         value={value}
-      ></textarea>
+      />
       <div className={style.separator}></div>
     </div>
   );

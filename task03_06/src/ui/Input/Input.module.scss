@@ -36,15 +36,14 @@
   font-weight: 400;
   line-height: 1.333333;
   letter-spacing: -0.3px;
+
   &:not(:disabled):hover {
     cursor: pointer;
   }
-
   &::placeholder {
     opacity: 0.8;
     color: var(--text-default);
   }
-
   &:not(:disabled):active::placeholder {
     opacity: 1;
   }
@@ -110,6 +109,19 @@
 .disabled {
   color: var(--underline-default);
 }
-.w300 {
-  --input-width: 300px;
+
+.size_xs {
+  --input-width: var(--input-size-xs);
+}
+.size_s {
+  --input-width: var(--input-size-s);
+}
+.size_m {
+  --input-width: var(--input-size-m);
+}
+.size_l {
+  --input-width: var(--input-size-l);
+}
+.size_xl {
+  --input-width: var(--input-size-xl);
 }
